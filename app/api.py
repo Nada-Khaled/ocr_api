@@ -57,7 +57,7 @@ def is_valid_base64(request_id, base64_str):
         }
 
 
-@app.post("/api/ai/v1.0.0/ocr")
+@app.post("/api/ai/v1.0.1/ocr")
 def ocr_endpoint(id: str = Form(""), front_id: str = Form(""), back_id: str = Form("")):
 
     request_timestamp = datetime.now(egypt_tz).strftime('%Y-%m-%d %H:%M:%S')
@@ -214,7 +214,7 @@ def main_execution(request_timestamp, start, id, front_id, back_id):
 
 @app.get("/")
 def health():
-    return {"status": "Hello from OCR v1.0.0"}
+    return {"status": "Hello from OCR v1.0.1"}
 
 @app.get("/health")
 def health():
